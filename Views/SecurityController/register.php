@@ -5,7 +5,7 @@
     <link rel="Stylesheet" type="text/css" href="../Public/css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <title>Printile</title>
+    <title>picmash</title>
 </head>
 <body>
 <div class="header">
@@ -17,7 +17,7 @@
         <img src="../Public/img/logo.svg">
         <img src="../Public/img/name.svg">
     </div>
-    <form method="POST">
+    <form action="?page=login" method="POST">
         <div class="messages">
             <?php
                 if(isset($messages)){
@@ -29,16 +29,26 @@
         </div>
         <input name="email" type="text" placeholder="email@email.com">
         <input name="password" type="password" placeholder="password">
-        <button type="submit" action="?page=login" >
-            CONTINUE
+        <button type="submit">
+            REGISTER
             <img src="../Public/img/arrow.svg">
         </button>
         <button2 type="submit">
             <img src="../Public/img/google.svg"class="iconStyle">
-            Continue with Google
+            Register with Google
             <img src="../Public/img/arrow.svg" class="iconStyle2">
         </button2>
-        <button3 type="button" class="button"action="?page=register">REGISTER</button3>
+        <button2 type="submit">
+            <img src="../Public/img/facebook.svg"class="iconStyle">
+            Register with Facebook
+            <img src="../Public/img/arrow.svg" class="iconStyle2">
+        </button2>
+        <button2 type="submit">
+            <img src="../Public/img/twitter.svg"class="iconStyle">
+            Register with Twitter
+            <img src="../Public/img/arrow.svg" class="iconStyle2">
+        </button2>
+        <button3 type="submit" name="register" value="register">REGISTER</button3>
     </form>
 </div>
 <div class="footer">

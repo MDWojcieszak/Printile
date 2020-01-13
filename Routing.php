@@ -16,6 +16,10 @@ class Routing {
             'login' => [
                 'controller' => 'SecurityController',
                 'action' => 'login'
+            ],
+            'register' => [
+                'controller'=>'SecurityController',
+                'action' => 'register'
             ]
         ];
     }

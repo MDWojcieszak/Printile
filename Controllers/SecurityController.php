@@ -29,4 +29,9 @@ class SecurityController extends AppController {
 
         $this->render('login');
     }
+    public function register()
+    {
+        $url = "http://$_SERVER[HTTP_HOST]/";
+        header("Location: {$url}?page=register");
+    }
 }
