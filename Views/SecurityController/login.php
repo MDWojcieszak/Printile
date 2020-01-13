@@ -8,7 +8,11 @@
     <title>picmash</title>
 </head>
 <body>
+<div class="header">
+    HEADER
+</div>
 <div class="container">
+
     <div class="logo">
         <img src="../Public/img/logo.svg">
         <img src="../Public/img/name.svg">
@@ -25,8 +29,20 @@
         </div>
         <input name="email" type="text" placeholder="email@email.com">
         <input name="password" type="password" placeholder="password">
-        <button type="submit">CONTINUE</button>
+        <button type="submit">
+            CONTINUE
+            <img src="../Public/img/arrow.svg">
+        </button>
+        <button2 type="submit">
+            <img src="../Public/img/google.svg"class="iconStyle">
+            Continue with Google
+            <img src="../Public/img/arrow.svg" class="iconStyle2">
+        </button2>
+        <button3 type="submit">REGISTER</button3>
     </form>
+</div>
+<div class="footer">
+FOOTER
 </div>
 </body>
 </html>
