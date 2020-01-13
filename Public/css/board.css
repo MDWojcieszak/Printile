@@ -1,0 +1,31 @@
+.container {
+    display: flow-root;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    margin: 1.5em;
+}
+
+.wraper > img {
+    width: 100%;
+}
+
+.actions-bar {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 3em;
+    color: #FF8000;
+    font-size: 1em;
+    line-height: 2.2em;
+    padding: 0 1em;
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+@media only screen and (max-device-width: 992px){
+    .board{
+        grid-template-columns: 1fr;
+    }
+}
