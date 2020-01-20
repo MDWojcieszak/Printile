@@ -10,28 +10,46 @@ class SecurityController extends AppController {
         $user = new User('admin', 'admin', 'Johnny', 'Snow');
 
         if ($this->isPost()) {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+            if($_POST['submit'] == 'login')
+            {
+                $email = $_POST['email'];
+                $password = $_POST['password'];
 
-            if ($user->getEmail() !== $email) {
-                $this->render('login', ['messages' => ['User with this email not exist!']]);
-                return;
+                if ($user->getEmail() !== $email) {
+                    $this->render('login', ['messages' => ['User with this email not exist!']]);
+                    return;
+                }
+
+                if ($user->getPassword() !== $password) {
+                    $this->render('login', ['messages' => ['Wrong password!']]);
+                    return;
+                }
+                $url = "http://$_SERVER[HTTP_HOST]/";
+                header("Location: {$url}?page=board");
             }
-
-            if ($user->getPassword() !== $password) {
-                $this->render('login', ['messages' => ['Wrong password!']]);
-                return;
+            if ($_POST['submit'] == 'register')
+            {
+                $url = "http://$_SERVER[HTTP_HOST]/";
+                header("Location: {$url}?page=register");
             }
-
-            $url = "http://$_SERVER[HTTP_HOST]/";
-            header("Location: {$url}?page=board");
+            
         }
 
         $this->render('login');
     }
     public function register()
     {
-        $url = "http://$_SERVER[HTTP_HOST]/";
-        header("Location: {$url}?page=register");
+        if ($this->isPost()){
+            if($_POST[action] == 'back'){
+                $url = "http://$_SERVER[HTTP_HOST]/";
+                header("Location: {$url}?page=login");
+            }
+            if($_POST[action] == 'register'){
+                $url = "http://$_SERVER[HTTP_HOST]/";
+                header("Location: {$url}?page=login");
+            }
+        }
+
+        $this->render('register');
     }
 }

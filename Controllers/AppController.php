@@ -18,6 +18,7 @@ class AppController {
         return $this->request === 'POST';
     }
 
+
     protected function render(string $template = null, array $variables = [])
     {
         $templatePath = $template ? dirname(__DIR__).'//Views//'.get_class($this).'//'. $template.'.php' : '';
