@@ -62,8 +62,17 @@
 
         </div>
         <div class="element">
-            <img src="../Public/img/vase.jpg">
-            <div class="opinion"><i class="far fa-star"></i><a>4.8</a></div>
+            <div class="picture">
+                <img src="../Public/img/vase.jpg">
+                <div class="opinion"><i class="far fa-star"></i><a>4.8</a></div>
+            </div>
+            <div class="description">
+                <b>PRODUCT NAME</b>
+                <a>asdasda asdas dsa ddsf sd fds f das</a>
+                <div class="buttons">
+                    <button>Add to Cart</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer">
