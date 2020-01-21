@@ -18,6 +18,16 @@ class BoardController extends AppController {
                 header("Location: {$url}?page=login");
                 
             }
+            if($_POST[submit] == 'products')
+            {
+                $url = "http://$_SERVER[HTTP_HOST]/";
+                header("Location: {$url}?page=error");
+            }
+            if($_POST[submit] == 'error')
+            {
+                $url = "http://$_SERVER[HTTP_HOST]/";
+                header("Location: {$url}?page=error");
+            }
         }
         $this->render('board');
     }

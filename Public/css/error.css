@@ -1,0 +1,49 @@
+
+body {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+.header {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-style: solid;
+    border-style: none none solid none;
+    border-bottom: 0.1em;
+    border-color: black;
+}
+.logo {
+    padding:0.25em 0.25em 0.25em 0.25em;
+    float: left;
+    background: white;
+}
+.logo:hover{
+    background-color: #ddd;
+}
+.logo > img {
+    margin: 0em 0em 0em 0em;
+    padding:0.25em 0.25em 0.25em 0.25em;
+    border: 1em;
+    width: 7em;
+}
+.error{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+.error>b{
+    font-size: 5em;
+}
+.error>a{
+    font-size: 3em;
+}

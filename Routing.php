@@ -2,6 +2,7 @@
 
 require_once 'Controllers//BoardController.php';
 require_once 'Controllers//SecurityController.php';
+require_once 'Controllers//ErrorController.php';
 
 class Routing {
     private $routes = [];
@@ -20,6 +21,10 @@ class Routing {
             'register' => [
                 'controller'=>'SecurityController',
                 'action' => 'register'
+            ],
+            'error' => [
+                'controller'=>'ErrorController',
+                'action' => 'error'
             ]
         ];
     }

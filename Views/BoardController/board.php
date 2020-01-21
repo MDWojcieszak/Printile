@@ -21,12 +21,32 @@
                 <img src="../Public/img/logo.svg">
             </button>
             <div class="menu">
-                <button class="fas fa-bars fa-2x" type="submit" name="submit"value="menu"></button>
+                <button class="fas fa-bars fa-2x" type="submit" name="submit"value="error"></button>
             </div>
             <div class="options">
-                <button type="submit" name="submit"value="produtcs">PRODUCTS</button>
-                <button type="submit" name="submit"value="design">3D DESIGN</button>
-                <button type="submit" name="submit"value="print">ORDER PRINT</button>
+                <div class="dropdown">
+                    <button class="dropbtn" type="submit" name="submit" value="products">PRODUCTS</button>
+                    <div class="dropdown-content">
+                        <button type="submit" name="submit" value="error">POPULAR</button>
+                        <button type="submit" name="submit" value="error">3D FILES</button>
+                        <button type="submit" name="submit" value="error">3D MODELS</button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn" type="submit" name="submit" value="error">3D DESIGN</button>
+                    <div class="dropdown-content">
+                        <button type="submit" name="submit" value="error">READY TO DOWNLOAD</button>
+                        <button type="submit" name="submit" value="error">ORDER 3D DESIGN</button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn" type="submit" name="submit" value="error">ORDER PRINT</button>
+                    <div class="dropdown-content">
+                        <button type="submit" name="submit" value="error">ORDER STANDARD</button>
+                        <button type="submit" name="submit" value="error">ORDER PREMIUM</button>
+                        <button type="submit" name="submit" value="error">ORDER BY CONTACT FORM</button>
+                    </div>
+                </div>
             </div>
             <div class="search">
                 <input name="search" type="text" placeholder="Search...">
@@ -38,6 +58,13 @@
 
     </form>
     <div class="container">
+        <div class="hiddenMenu">
+
+        </div>
+        <div class="element">
+            <img src="../Public/img/vase.jpg">
+            <div class="opinion"><i class="far fa-star"></i><a>4.8</a></div>
+        </div>
     </div>
     <div class="footer">
     </div>
