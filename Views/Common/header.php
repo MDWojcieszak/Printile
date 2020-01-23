@@ -1,16 +1,28 @@
 <form class="header" action="?page=board" method="POST">
         <div class="uppHeader">
-            <i class="fas fa-user"></i> <?php
+            <?php
                 if(!isset($_SESSION['id']))
                 {
                     $url = "http://$_SERVER[HTTP_HOST]/";
                     header("Location: {$url}?page=sessionTimedOut");
                 }
-            ?><?=$_SESSION['id']?>
+            ?>
             <button class="style2" type="submit" name="submit" value="cart">
                 <i class="fas fa-shopping-cart"></i> Cart(0)</button>
-            <button  type="submit" name="submit" value="logout">
-                <i class="far fa-user"></i> Logout</button>
+            <div class="dropdown_user">
+                <div  class="dropbtnUser">
+                <i class="far fa-user"></i> <?=$_SESSION['id']?></div>
+                <div class="dropdown-content-user">
+                    <button type="submit" name="submit" value="logout"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+                    <button type="submit" name="submit" value="settings"><i class="fas fa-user-cog"></i> Settings</button>
+                    <?php
+                        if($_SESSION['id'] == 'admin')
+                        {
+                            ?><button type="submit" name="submit" value="settings">Admin Panel</button><?php
+                        }
+                    ?>
+                </div>
+            </div>
         </div>
         <div class="line1"></div>
         <div class="underHeader">

@@ -144,6 +144,48 @@ body {
 }
 .uppHeader{
     font-size: 1.25em;
+    height: 1.5em;
+}
+.dropdown_user{
+    float: right;
+    min-width: 8em;
+    position: relative;
+    display: inline;
+}
+.dropdown_user .dropdown-content-user{
+    display: none;
+    align-self: center;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    background:linear-gradient(180deg, #868686, #5C5C5C 100%);
+    border-radius: 0.5em;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropbtnUser{
+    padding:0em 1em 0em 1em;
+    text-align: center;
+    background: white;
+    border: 0.1em;
+    border-style: none none none solid;
+    border-color: #707070;
+}
+.dropdown-content-user>button{
+    background: #5C5C5C ;
+    border-radius: 0.5em;
+    max-width: 100%;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    margin: 0.2em 0em 0.2em 0em;
+    font-size: 1em;
+    color: white;
+}
+.dropdown_user:hover .dropdown-content-user {
+    
+    display: flex;
+    flex-direction: column;
+}
+.dropdown-content-user button:hover {
+    border-radius: 0.5em;
+    background-color: #FF8000;
 }
 .uppHeader>button{
     padding:0em 1em 0em 1em;
