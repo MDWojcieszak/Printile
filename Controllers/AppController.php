@@ -5,6 +5,7 @@ class AppController {
 
     public function __construct()
     {
+        session_start();
         $this->request = $_SERVER['REQUEST_METHOD'];
     }
 
@@ -17,7 +18,6 @@ class AppController {
     {
         return $this->request === 'POST';
     }
-
 
     protected function render(string $template = null, array $variables = [])
     {

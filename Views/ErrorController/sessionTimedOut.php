@@ -8,14 +8,14 @@
     <title>Printile</title>
 </head>
 <body>
-<form class="header" action="?page=error" method="POST">
+<form class="header" action="?page=sessionTimedOut" method="POST">
             <button class="logo" type="submit">
                 <img src="../Public/img/logo.svg">
             </button>
 </form>
 <div class="error">
-    <b>FATAL ERROR 404</b>
-    <a>This page does not exist, please go back</a>
+    <b>Session timed out!</b>
+    <a>Please go back to login page.</a>
 </div>
 </body>
 </html>

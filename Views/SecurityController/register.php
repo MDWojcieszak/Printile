@@ -18,20 +18,47 @@
             <img src="../Public/img/name.svg">
         </div>
         <form action="?page=register" method="POST">
-            <div class="messages">
-                <?php
+            <div class="message">
+            <?php
+                if(isset($messages)){
+                    $key=array_search('name',$messages);
+                    if( $key !=NULL)
+                        echo $messages[$key+1];
+                }
+                ?>
+                </div>
+            <input name="name" type="text" placeholder="name">
+            <div class="message">
+            <?php
                     if(isset($messages)){
-                        foreach($messages as $message) {
-                            echo $message;
-                        }
+                        $key=array_search('surname',$messages);
+                        if( $key !=NULL)
+                            echo $messages[$key+1];
                     }
                 ?>
-            </div>
-            <input name="name" type="text" placeholder="name">
+                </div>
             <input name="surname" type="text" placeholder="surname">
+            <div class="message">
+            <?php
+                    if(isset($messages)){
+                        $key=array_search('email',$messages);
+                        if( $key !=NULL)
+                            echo $messages[$key+1];
+                    }
+                ?>
+                </div>
             <input name="email" type="text" placeholder="email@email.com">
+            <div class="message">
+            <?php
+                    if(isset($messages)){
+                        $key=array_search('password',$messages);
+                        if( $key !=NULL)
+                            echo $messages[$key+1];
+                    }
+                ?>
+                </div>
             <input name="password" type="password" placeholder="password">
-            <button type="submit"name="action" value="register">
+            <button type="submit"name="submit" value="register">
                 REGISTER
                 <img src="../Public/img/arrow.svg">
             </button>
@@ -50,7 +77,7 @@
                 Register with Twitter
                 <img src="../Public/img/arrow.svg" class="iconStyle2">
             </button>
-            <button type="submit" name="action" value="back" class="button3">
+            <button type="submit" name="submit" value="back" class="button3">
                 BACK </button>
         </form>
     </div>

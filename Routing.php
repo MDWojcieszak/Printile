@@ -18,6 +18,10 @@ class Routing {
                 'controller' => 'SecurityController',
                 'action' => 'login'
             ],
+            'logout' => [
+                'controller' => 'SecurityController',
+                'action' => 'logout'
+            ],
             'register' => [
                 'controller'=>'SecurityController',
                 'action' => 'register'
@@ -25,6 +29,10 @@ class Routing {
             'error' => [
                 'controller'=>'ErrorController',
                 'action' => 'error'
+            ],
+            'sessionTimedOut' => [
+                'controller'=>'ErrorController',
+                'action' => 'sessionTimedOut'
             ]
         ];
     }

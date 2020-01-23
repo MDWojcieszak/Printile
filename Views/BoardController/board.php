@@ -8,72 +8,23 @@
     <title>Printile</title>
 </head>
 <body>
-    <form class="header" action="?page=board" method="POST">
-        <div class="uppHeader">
-            <button class="style2" type="submit" name="submit" value="cart">
-                <i class="fas fa-shopping-cart"></i> Cart(0)</button>
-            <button  type="submit" name="submit" value="logout">
-                <i class="far fa-user"></i> Logout</button>
-        </div>
-        <div class="line1"></div>
-        <div class="underHeader">
-            <button class="logo" type="submit" name="submit" value="main">
-                <img src="../Public/img/logo.svg">
-            </button>
-            <div class="menu">
-                <button class="fas fa-bars fa-2x" type="submit" name="submit"value="error"></button>
-            </div>
-            <div class="options">
-                <div class="dropdown">
-                    <button class="dropbtn" type="submit" name="submit" value="products">PRODUCTS</button>
-                    <div class="dropdown-content">
-                        <button type="submit" name="submit" value="error">POPULAR</button>
-                        <button type="submit" name="submit" value="error">3D FILES</button>
-                        <button type="submit" name="submit" value="error">3D MODELS</button>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn" type="submit" name="submit" value="error">3D DESIGN</button>
-                    <div class="dropdown-content">
-                        <button type="submit" name="submit" value="error">READY TO DOWNLOAD</button>
-                        <button type="submit" name="submit" value="error">ORDER 3D DESIGN</button>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn" type="submit" name="submit" value="error">ORDER PRINT</button>
-                    <div class="dropdown-content">
-                        <button type="submit" name="submit" value="error">ORDER STANDARD</button>
-                        <button type="submit" name="submit" value="error">ORDER PREMIUM</button>
-                        <button type="submit" name="submit" value="error">ORDER BY CONTACT FORM</button>
-                    </div>
-                </div>
-            </div>
-            <div class="search">
-                <input name="search" type="text" placeholder="Search...">
-                <button type="submit" name="submit" value="search">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-
-    </form>
+<?php include(dirname(__DIR__).'/Common/header.php'); ?>
     <div class="container">
-        <div class="hiddenMenu">
-
-        </div>
-        <div class="element">
-            <div class="picture">
-                <img src="../Public/img/vase.jpg">
-                <div class="opinion"><i class="far fa-star"></i><a>4.8</a></div>
-            </div>
-            <div class="description">
-                <b>PRODUCT NAME</b>
-                <a>asdasda asdas dsa ddsf sd fds f das</a>
-                <div class="buttons">
-                    <button>Add to Cart</button>
+        <?php foreach($products as $product): ?>
+            <div class="element">
+                <div class="picture">
+                    <img src="../Public/img/vase.jpg">
                 </div>
+                <div class="dd"><div class="opinion"><i class="far fa-star"></i><a><?= $product->getOpinion() ?></a></div></div>
+                <div class="description">
+                    <b><?= $product->getName() ?></b>
+                    <a><?= $product->getDescription() ?></a>
+                    </div>
+                <button class="button1">Add to Cart<img src="../Public/img/arrow.svg"></button>
+                <button class="button2">BUY NOW</button>
+                
             </div>
-        </div>
+        <?php endforeach ?>
     </div>
     <div class="footer">
     </div>

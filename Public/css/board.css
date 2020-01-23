@@ -14,34 +14,45 @@ body {
     margin: 0;
     max-width: unset;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    height: inherit;
+    
     align-items: center;
     background: transparent linear-gradient(180deg, #FFFFFF, #B3B3B3 100%) 0% 0% no-repeat padding-box;
 }
 .element{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
     align-items: center;
     border-radius: 1em;
     box-shadow: 6px 6px 8px #00000035;
-    margin:4em 10% 4em 10%;
+    grid-gap:3px;
     background: linear-gradient(180deg, #868686, #5C5C5C 100%);
 }
 .element .picture{
-    display: flex;
-    flex-direction: column;
+    grid-column:1;
+    grid-row:1;
     align-items: center;
     padding: 1em 1em 1em 1em;
 }
 .element .picture>img{
     border-radius: 1em;
     box-shadow:6px 6px 8px #00000035; 
-    width: 20em;
-    height: 20em;
+    width: 14em;
+    height: 14em;
+}
+.element .dd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column:1;
+    grid-row:2;
 }
 .element .opinion{
+    margin: 0 1em 1em 1em;
+    
     display: inline-flex;
     align-items: center;
     color: white;
@@ -52,31 +63,57 @@ body {
     background: #FF8000;
     box-shadow:6px 6px 8px #00000040; 
     padding: 0.2em 1em 0.2em 1em;
-    margin-top: 1em;
 }
 .element .opinion>a{
     margin-left: 0.25em;
 }
 .element .description{
-    height: 24em;
+    grid-column:2/4;
+    grid-row:1;
+    max-height: 14em;
+    max-width: 30em;
     display: flex;
     flex-direction: column;
-    padding: 1em 2em 1em 2em;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.4em 2em 0.5em 2em;
+    
 }
 .element .description>b{
-    align-self: flex-start;
+    color: white;
+    font-weight: 800;
     font-size: 2em;
     text-align: center;
 }
 .element .description>a{
-    flex-grow: 10;
-    align-self: center;
+    color: #FF8000;
     text-align: justify;
 }
-.element .buttons{
-    align-self: flex-end;
+.element .description>a:hover{
+    color: #FFFFFF;
 }
-.element .buttons>button{
+.element>button{
+    grid-row:2;
+    
+}
+.element .button1{
+    grid-column:2;
+    margin: 0 1em 1em 1em;
+    color: white;
+    background: #B3B3B3;
+    box-shadow: 0px 3px 6px #00000025;
+    border-radius: 2em;
+    border-style: solid;
+    border-width: 0.2em;
+    border-color: #FF8000;
+    line-height: 2.5em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+.element .button2{
     margin: 0 1em 1em 1em;
     color: white;
     background: #FF8000;
@@ -87,6 +124,12 @@ body {
     line-height: 2.5em;
     font-size: 1em;
     font-weight: bold;
+}
+.element button > img{
+    height: 2.5em;
+    margin-right: 0;
+    float: right;
+    padding: 0.4em;
 }
 
 .header {
