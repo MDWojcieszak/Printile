@@ -20,6 +20,7 @@
                     <b><?= $product->getName() ?></b>
                     <a><?= $product->getDescription() ?></a>
                     </div>
+                <div class="price"><?=$product->getPrice() ?> $</div>    
                 <button class="button1">Add to Cart<img src="../Public/img/arrow.svg"></button>
                 <button class="button2">BUY NOW</button>
                 

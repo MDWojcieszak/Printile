@@ -18,7 +18,7 @@
                     <?php
                         if($_SESSION['id'] == 'admin')
                         {
-                            ?><button type="submit" name="submit" value="settings">Admin Panel</button><?php
+                            ?><button type="submit" name="submit" value="database">Admin Panel</button><?php
                         }
                     ?>
                 </div>
