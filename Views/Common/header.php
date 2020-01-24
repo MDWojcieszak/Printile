@@ -30,7 +30,7 @@
                 <img src="../Public/img/logo.svg">
             </button>
             <div class="menu">
-                <button class="fas fa-bars fa-2x" type="submit" name="submit"value="database"></button>
+                <b class="fas fa-bars fa-2x" onclick="openNav()"></b>
             </div>
             <div class="options">
                 <div class="dropdown">
