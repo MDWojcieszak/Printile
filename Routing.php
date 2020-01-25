@@ -3,6 +3,7 @@
 require_once 'Controllers//BoardController.php';
 require_once 'Controllers//SecurityController.php';
 require_once 'Controllers//ErrorController.php';
+require_once 'Controllers//AdminController.php';
 
 class Routing {
     private $routes = [];
@@ -41,6 +42,22 @@ class Routing {
             'popular'=> [
                 'controller'=>'BoardController',
                 'action' => 'popular'
+            ],
+            'contactForm'=> [
+                'controller'=>'BoardController',
+                'action' => 'contactForm'
+            ],
+            'order'=> [
+                'controller'=>'BoardController',
+                'action' => 'order'
+            ],
+            'order-premium'=> [
+                'controller'=>'BoardController',
+                'action' => 'order_premium'
+            ],
+            'admin-panel' => [
+                'controller'=>'AdminController',
+                'action'=>'admin_panel'
             ]
         ];
     }

@@ -33,6 +33,7 @@ class SecurityController extends AppController {
                 }
 
                 $_SESSION["id"] = $user->getEmail();
+                $_SESSION["userID"] = $user->getId();
                 $_SESSION["role"] = $user->getRole();
                 $_SESSION["total_quantity"] = 0;
                 $_SESSION["products"] = array();
@@ -95,7 +96,7 @@ class SecurityController extends AppController {
                     $res->execute();
                     $res = $res->fetchAll(PDO::FETCH_ASSOC);
                     $passHash = password_hash($password, PASSWORD_BCRYPT,array("cost" => 12));
-                    $res = $con->prepare("INSERT INTO users VALUES (NULL, '$name' ,'$surname', '$email', '$passHash');");
+                    $res = $con->prepare("INSERT INTO users VALUES (NULL, 3, '$name' ,'$surname', '$email', '$passHash');");
                     $res->execute();
                     $this->render('login', ['messages' => ['You have been registered successfully!']]);
                     return;

@@ -1,0 +1,127 @@
+body {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+.container {
+    margin-top: 8.5em;
+    max-width: unset;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    background: transparent linear-gradient(180deg, #FFFFFF, #B3B3B3 100%) 0% 0% no-repeat padding-box;
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    margin-top: 1em;
+    border: 2px solid #FFA54A;
+    background:linear-gradient(180deg, #868686, #5C5C5C 100%);
+    color: white;
+    border-radius: 0.5em;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.container>b{
+    color: black;
+    font-size: 1.2em;
+    font-weight: 800;
+    margin-top: 1em;
+}
+.container .info{
+    color: red;
+    font-size: 1.2em;
+    font-weight: 800;
+    margin-top: 1em;
+}
+.order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container>form>b{
+    align-items: center;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 800;
+    margin-top: 1em;
+}
+
+.box{
+    margin-top: 0.2emem;
+    padding-left: 3em;
+}
+select {
+    background:linear-gradient(180deg, #868686, #5C5C5C 100%);
+    background-color: #5C5C5C;
+    color: white;
+    height: 2em;
+    width: 8em;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 9px 25px rgba(0, 0, 0, 0.4);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    
+    border-radius: 0.5em;
+  }
+  
+  .box::after {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: relative;
+    left: -1.8em;
+    width: 2em;
+    height: 2em;
+    padding:0.35em;
+    font-size: 1.5em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+  }
+  
+  .box>select:hover {
+    color: white;
+    background: #868686;
+  }
+  
+  .box select option {
+    padding: 30px;
+  }
+
+.enter{
+    width: 8em;
+    line-height: 2em;
+    text-align: center;
+    border-radius: 0.5em;
+    border:solid orange;
+  }
+.send {
+    margin: 3em 1em 1em 1em;
+    color: white;
+    background: #FF8000;
+    box-shadow: 0px 3px 6px #00000025;
+    border-radius: 2em;
+    border: none;
+    width: 15em;
+    line-height: 2.5em;
+    font-size: 1em;
+    font-weight: bold;
+}
+.send > img{
+    height: 2.5em;
+    float: right;
+    padding: 0.4em;
+}
+
+

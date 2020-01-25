@@ -5,18 +5,24 @@ class User {
     private $password;
     private $name;
     private $surname;
-    private $role = ['ROLE_USER'];
+    private $id;
+    private $role;
+    
 
     public function __construct(
+        int $id,
         string $email,
         string $password,
         string $name,
-        string $surname
+        string $surname,
+        int $role = 3
     ) {
+        $this->id = $id;
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
+        $this->role = $role;
     }
 
     public function getId(): int
@@ -31,7 +37,7 @@ class User {
     {
         return $this->email;
     }
-    public function getRole(): array
+    public function getRole(): int
     {
         return $this->role;
     }

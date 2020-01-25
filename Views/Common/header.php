@@ -16,9 +16,9 @@
                     <button type="submit" name="submit" value="logout"><i class="fas fa-sign-out-alt"></i> Log Out</button>
                     <button type="submit" name="submit" value="settings"><i class="fas fa-user-cog"></i> Settings</button>
                     <?php
-                        if($_SESSION['id'] == 'admin')
+                        if($_SESSION['role'] == 1)
                         {
-                            ?><button type="submit" name="submit" value="database">Admin Panel</button><?php
+                            ?><button type="submit" name="submit" value="admin-panel">Admin Panel</button><?php
                         }
                     ?>
                 </div>
@@ -51,9 +51,9 @@
                 <div class="dropdown">
                     <button class="dropbtn" type="submit" name="submit" value="error">ORDER PRINT</button>
                     <div class="dropdown-content">
-                        <button type="submit" name="submit" value="error">ORDER STANDARD</button>
-                        <button type="submit" name="submit" value="error">ORDER PREMIUM</button>
-                        <button type="submit" name="submit" value="error">ORDER BY CONTACT FORM</button>
+                        <button type="submit" name="submit" value="order">ORDER STANDARD</button>
+                        <button type="submit" name="submit" value="order-premium">ORDER PREMIUM</button>
+                        <button type="submit" name="submit" value="contactForm">ORDER BY CONTACT FORM</button>
                     </div>
                 </div>
             </div>

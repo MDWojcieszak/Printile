@@ -21,7 +21,10 @@ body {
     background: transparent linear-gradient(180deg, #FFFFFF, #B3B3B3 100%) 0% 0% no-repeat padding-box;
     
 }
-
+.button1{
+    float: right;
+    cursor: pointer;
+}
 
 
 .tbl-cart {

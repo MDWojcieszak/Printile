@@ -49,6 +49,67 @@ class BoardController extends AppController {
             header("Location: {$url}?page=popular");
             return;
         }
+        if($_POST['submit'] == 'contactForm')
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=contactForm");
+            return;
+        }
+        if($_POST['submit'] == 'order')
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=order");
+            return;
+        }
+        if($_POST['submit'] == 'order-premium')
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=order-premium");
+            return;
+        }
+        if($_POST['submit'] == 'admin-panel')
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=admin-panel");
+            return;
+        }
+        if($_POST['submit'] == 'request_order')
+        {
+            $userID = $_SESSION['userID'];
+            $date = date("Y/m/d h:i:sa");
+            $quality = $_POST['quality'];
+            $heigh = $_POST['heigh'];
+            $width = $_POST['width'];
+            $infil = $_POST['infil'];
+            $walls = $_POST['walls'];
+            if($_SESSION['role'] <= 2)
+                $premium = 'PREMIUM';
+            else
+                $premium = 'STANDARD';
+            
+            $db = new Database();
+                    $con = $db->connect();
+                    
+                    $res = $con->prepare("INSERT INTO parameters VALUES (NULL, 'test', '$quality', '$heigh', '$width', '$infil', '$walls', '$premium');");
+                    $res->execute();
+
+                    $res = $con->prepare("SELECT * FROM parameters
+                    WHERE ID = (
+                        SELECT MAX(ID) FROM parameters)");
+                    $res->bindParam(':id', $id, PDO::PARAM_STR);
+                    $res->execute();
+
+                    $parameters = $res->fetch(PDO::FETCH_ASSOC);
+                    $parametersID = $parameters['id'];
+
+                    $res = $con->prepare("INSERT INTO orders VALUES (NULL, '$userID', '$date' ,'PREPARING', '$parametersID', 0);");
+                    $res->execute();
+
+                $message=array([]);
+                array_push($message,"info","Your order is added to queue!");
+                $this->render('order', ['messages' =>array_values($message)]);
+            return;
+        }
         if($_POST['submit'] == 'addToCart')
         {
             $_SESSION["total_quantity"] +=$_POST['quantity'];
@@ -140,5 +201,38 @@ class BoardController extends AppController {
             $this->action();
         }
         $this->render('board', ['products' => $data]);
+    }
+    public function contactForm()
+    {
+        if($this->isPost())
+        {
+            $this->action();
+        }
+        $this->render('contactForm');
+    }
+
+    public function order()
+    {
+        if($this->isPost())
+        {
+            $this->action();
+        }
+        else{
+            $message=array([]);
+            array_push($message,"type","You ordering a STANDARD print!");
+            $this->render('order', ['messages' =>array_values($message)]);
+        }
+    }
+    public function order_premium()
+    {
+        if($this->isPost())
+        {
+            $this->action();
+        }
+        else{
+            $message=array([]);
+            array_push($message,"type","You ordering a PREMIUM print!");
+            $this->render('order', ['messages' =>array_values($message)]);
+        }
     }
 }
