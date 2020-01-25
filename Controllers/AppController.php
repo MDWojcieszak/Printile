@@ -6,6 +6,10 @@ class AppController {
     public function __construct()
     {
         session_start();
+        if(isset($_SESSION["cart_item"])){
+            $total_quantity = 0;
+            $total_price = 0;
+        }
         $this->request = $_SERVER['REQUEST_METHOD'];
     }
 

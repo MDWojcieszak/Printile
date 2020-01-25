@@ -34,6 +34,9 @@ class SecurityController extends AppController {
 
                 $_SESSION["id"] = $user->getEmail();
                 $_SESSION["role"] = $user->getRole();
+                $_SESSION["total_quantity"] = 0;
+                $_SESSION["products"] = array();
+                $_SESSION["quantity"] = array();
 
                 $url = "http://$_SERVER[HTTP_HOST]/";
                 header("Location: {$url}?page=board");

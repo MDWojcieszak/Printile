@@ -33,6 +33,14 @@ class Routing {
             'sessionTimedOut' => [
                 'controller'=>'ErrorController',
                 'action' => 'sessionTimedOut'
+            ],
+            'cart' => [
+                'controller'=>'BoardController',
+                'action' => 'cart'
+            ],
+            'popular'=> [
+                'controller'=>'BoardController',
+                'action' => 'popular'
             ]
         ];
     }

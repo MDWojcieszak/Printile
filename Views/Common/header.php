@@ -1,4 +1,4 @@
-<form class="header" action="?page=board" method="POST">
+<form class="header" id="navbar" action="?page=board" method="POST">
         <div class="uppHeader">
             <?php
                 if(!isset($_SESSION['id']))
@@ -8,7 +8,7 @@
                 }
             ?>
             <button class="style2" type="submit" name="submit" value="cart">
-                <i class="fas fa-shopping-cart"></i> Cart(0)</button>
+                <i class="fas fa-shopping-cart"></i> Cart(<?=$_SESSION['total_quantity']?>)</button>
             <div class="dropdown_user">
                 <div  class="dropbtnUser">
                 <i class="far fa-user"></i> <?=$_SESSION['id']?></div>
@@ -36,7 +36,7 @@
                 <div class="dropdown">
                     <button class="dropbtn" type="submit" name="submit" value="products">PRODUCTS</button>
                     <div class="dropdown-content">
-                        <button type="submit" name="submit" value="error">POPULAR</button>
+                        <button type="submit" name="submit" value="popular">POPULAR</button>
                         <button type="submit" name="submit" value="error">3D FILES</button>
                         <button type="submit" name="submit" value="error">3D MODELS</button>
                     </div>

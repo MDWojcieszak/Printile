@@ -7,6 +7,7 @@ class Database {
     private $password;
     private $host;
     private $database;
+    private $conn;
 
     public function __construct()
     {
@@ -14,6 +15,7 @@ class Database {
         $this->password = PASSWORD;
         $this->host = HOST;
         $this->database = DATABASE;
+        $this->conn = $this->connect();
     }
 
     public function connect()
@@ -29,8 +31,8 @@ class Database {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         }
-        catch(PDOException $e) {
-            die("Connection failed: " . $e->getMessage());
+        catch(PDOException $error) {
+            die("Connection failed: " . $error->getMessage());
         }
     }
 }

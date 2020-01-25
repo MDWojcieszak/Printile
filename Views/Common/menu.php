@@ -8,16 +8,4 @@
   <a href="#">Contact</a>
 </div>
 
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-  document.getElementById("myNav").style.width = "100%";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-  document.getElementById("myNav").style.width = "0%";
-}
-</script>
+<script src="../Public/js/menu.js"></script>
