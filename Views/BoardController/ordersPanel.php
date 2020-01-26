@@ -28,6 +28,7 @@
                     <td  style="text-align:right;"><?= $order->getstatus()?></td>
                     <td  style="text-align:right;"><?= $order->getParametersID()?></td>
                     <td  style="text-align:right;"><?= $order->getPrice()?></td>
+                    <input type="hidden" name="price" value=<?=$order->getPrice()?>>
                     <input type="hidden" name="orderID" value=<?=$order->getID()?>>
                     <?php if($order->getStatus()== 'READY'){?>
                     <td><button type="submit" name="submit" value="update"><i class="fas fa-cart-plus"></i></button></td>
