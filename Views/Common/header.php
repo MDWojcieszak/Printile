@@ -57,12 +57,13 @@
                     </div>
                 </div>
             </div>
+            </form>
             <div class="search">
-                <input name="search" type="text" placeholder="Search...">
-                <button type="submit" name="submit" value="search">
+                <input name="xD" type="none" placeholder="Search...">
+                <button type="none" name="xD" value="search">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
         </div>
 
-    </form>
+    

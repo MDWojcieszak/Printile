@@ -1,7 +1,13 @@
 <!DOCTYPE html>
+<?php include(dirname(__DIR__).'/Common/head.php'); ?>
     <link rel="stylesheet" type="text/css" href="../Public/css/cart.css"> 
 </head>
 <body id="main">
+    <form action="?page=admin-panel" method="POST">
+    <button class="logo" type="submit" name="submit" value="back">
+                <img src="../Public/img/logo.svg">
+            </button>
+    </form>
     <div class="container">
         <table class="tbl-cart" cellpadding="10" cellspacing="1">
             <tbody>
@@ -28,7 +34,7 @@
                     <td  style="text-align:right;"><?= $order->getDate() ?></td>
                     <td  style="text-align:right;"><?= $order->getstatus()?></td>
                     <td  style="text-align:center;"class="box" >
-                    <select name="infil">
+                    <select name="status">
                         <option value="0">UNCHANGE</option>
                         <option value="PREPARING">PREPARING</option>
                         <option value="PROCESSED">PROCESSED</option>
@@ -37,14 +43,18 @@
                     </td>
                     <td  style="text-align:right;"><?= $order->getParametersID()?></td>
                     <td  style="text-align:right;"><?= $order->getPrice()?></td>
-                    <td  style="text-align:right;"><input type="text"></td>
-                    <td><button class="button1"type="submit" name="submit" value="removeFromCart"><i class="fas fa-trash"></i></button></td>
+                    <td  style="text-align:right;"><input type="text" name="price"></td>
+                    <input type="hidden" name="orderID" value=<?=$order->getID()?>>
+                    <td><button type="submit" name="submit" value="update"><i class="fas fa-edit"></i></button></td>
                     
                 </tr>
                 </form>
             <?php endforeach?>
             </tbody>
         </table>
+
+
+        
     </div>
 </body>
 </html>

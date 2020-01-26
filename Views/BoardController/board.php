@@ -22,7 +22,7 @@
                     <div class="price"><?=$product->getPrice() ?> $</div>
                     <input type="number" id="quantity" class="quantity" name="quantity" value="1" size="2" />
                     <input type="hidden" id = "cartID" name="productID" value=<?=$product->getId()?>>
-                    <button class="button1" type="submit" name="submit" value="addToCart"onclick="addToCart();">Add to Cart<img src="../Public/img/arrow.svg"></button>
+                    <button class="button1" type="submit" name="submit" value="addToCart" onclick="addToCart();">Add to Cart<img src="../Public/img/arrow.svg"></button>
                     <button class="button2">BUY NOW</button>
                     
                 </div>
