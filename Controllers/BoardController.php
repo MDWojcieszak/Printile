@@ -31,7 +31,7 @@ class BoardController extends AppController {
             header("Location: {$url}?page=error");
             return;
         }
-        if($_POST['submit'] == 'database')
+        if($_POST['submit'] == 'dataBase')
         {
             $url = "http://$_SERVER[HTTP_HOST]/";
             header("Location: {$url}adminer/adminer.php");
@@ -83,6 +83,12 @@ class BoardController extends AppController {
         {
             $url = "http://$_SERVER[HTTP_HOST]/";
             header("Location: {$url}?page=admin-panel-ordered");
+            return;
+        }
+        if($_POST['submit'] == 'admin-panel-users')
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=admin-panel-users");
             return;
         }
         if($_POST['submit'] == 'request_order')
@@ -263,7 +269,7 @@ class BoardController extends AppController {
             }
             $this->action();
         }
-        for($i=1;$i<20;$i++)
+        for($i=1;$i<200;$i++)
         {
             $element = $ordersRepository->getOrder($i);
             if(isset($element) && $element->getUserID()==$_SESSION['userID'])

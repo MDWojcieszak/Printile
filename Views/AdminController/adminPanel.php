@@ -1,6 +1,12 @@
 <!DOCTYPE html>
+<?php
+    if($_SESSION['role'] != 1) {
+        $url = "http://$_SERVER[HTTP_HOST]/";
+        header("Location: {$url}?page=no-permission");
+    }
+?>
 <?php include(dirname(__DIR__).'/Common/head.php'); ?>
-    <link rel="stylesheet" type="text/css" href="../Public/css/cart.css"> 
+    <link rel="stylesheet" type="text/css" href="../Public/css/cart.css">
 </head>
 <body id="main">
     <form action="?page=admin-panel" method="POST">

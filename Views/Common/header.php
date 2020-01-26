@@ -1,12 +1,6 @@
 <form class="header" id="navbar" action="?page=board" method="POST">
         <div class="uppHeader">
-            <?php
-                if(!isset($_SESSION['id']))
-                {
-                    $url = "http://$_SERVER[HTTP_HOST]/";
-                    header("Location: {$url}?page=sessionTimedOut");
-                }
-            ?>
+            
             <button class="style2" type="submit" name="submit" value="cart">
                 <i class="fas fa-shopping-cart"></i> Cart(<?=$_SESSION['total_quantity']?>)</button>
                 <button class="style3" type="submit" name="submit" value="orders-panel">
@@ -51,7 +45,15 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn" type="submit" name="submit" value="error">ORDER PRINT</button>
+                    <?php if($_SESSION['role'] < 3){ ?>
+                    <button class="dropbtn" type="submit" name="submit" value="order-premium">ORDER PRINT</button>
+                    <?php
+                        }
+                        else{
+                            ?>
+                            <button class="dropbtn" type="submit" name="submit" value="order">ORDER PRINT</button>
+                            <?php
+                        }?>
                     <div class="dropdown-content">
                         <?php if($_SESSION['role'] == 3){ ?>
                         <button type="submit" name="submit" value="order">ORDER STANDARD</button>

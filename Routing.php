@@ -31,6 +31,10 @@ class Routing {
                 'controller'=>'ErrorController',
                 'action' => 'error'
             ],
+            'no-permission' => [
+                'controller'=>'ErrorController',
+                'action' => 'noPermission'
+            ],
             'sessionTimedOut' => [
                 'controller'=>'ErrorController',
                 'action' => 'sessionTimedOut'
@@ -66,6 +70,10 @@ class Routing {
             'admin-panel-ordered' => [
                 'controller'=>'AdminController',
                 'action'=>'adminPanelOrdered'
+            ],
+            'admin-panel-users' => [
+                'controller'=>'AdminController',
+                'action'=>'adminPanelUsers'
             ]
         ];
     }

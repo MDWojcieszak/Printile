@@ -4,14 +4,19 @@
 <div id="mySidenav" class="sidenav">
   
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <?php if($_SESSION['role'] == 1){?>
+  <a><button class="button3" type="submit" name="submit" value="admin-panel">Accepting Orders</button></a>
+  <a><button class="button3" type="submit" name="submit" value="admin-panel-ordered">Printing Orders</button></a>
+  <a><button class="button3" type="submit" name="submit" value="admin-panel-users">Users</button></a>
+  <a><button class="button3" type="submit" name="submit" value="dataBase">Data Base</button></a>
+  <?php 
+  }
+  else{?>
   <a href="#">About</a>
   <a href="#">Services</a>
   <a href="#">Clients</a>
   <a href="#">Contact</a>
-  <?php if($_SESSION['role'] == 1){?>
-  <a><button class="button3" type="submit" name="submit" value="admin-panel">Accepting Orders</button></a>
-  <a><button class="button3" type="submit" name="submit" value="admin-panel-ordered">Printing Orders</button></a>
-  <?php 
+  <?php
   }?>
 </div>
 </form>

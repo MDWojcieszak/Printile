@@ -38,16 +38,17 @@ class UserRepository extends Repository {
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // foreach ($users as $user) {
-        //     $result[] = new User(
-        //         $user['email'],
-        //         $user['password'],
-        //         $user['name'],
-        //         $user['surname'],
-        //         $user['id']
-        //     );
-        // }
+         foreach ($users as $user) {
+             $result[] = new User(
+				$user['id'],
+				$user['email'],
+				$user['password'],
+				$user['name'],
+				$user['surname'],
+				$user['roleID']
+             );
+         }
 
-        return $users;
+        return $result;
     }
 }

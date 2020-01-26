@@ -23,4 +23,13 @@ class ErrorController extends AppController {
         }
         $this->render("sessionTimedOut");
     }
+    public function noPermission()
+    {
+        if($this->isPost())
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=board");
+        }
+        $this->render("noPermission");
+    }
 }

@@ -25,4 +25,25 @@ class OrdersRepository extends Repository {
             $product['price']
         );
     }
+    public function getOrders(): array {
+        
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM orders ;
+        ');
+        $stmt->execute();
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+         foreach ($products as $product) {
+             $result[] = new Order(
+				$product['id'],
+                $product['userID'],
+                $product['date'],
+                $product['status'],
+                $product['parametersID'],
+                $product['price']
+             );
+         }
+
+        return $result;
+    }
 }
