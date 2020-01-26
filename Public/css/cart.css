@@ -15,7 +15,7 @@ body {
     max-width: unset;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     height: 100%;
     align-items: center;
     background: transparent linear-gradient(180deg, #FFFFFF, #B3B3B3 100%) 0% 0% no-repeat padding-box;

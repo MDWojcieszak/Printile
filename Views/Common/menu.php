@@ -8,9 +8,10 @@
   <a href="#">Services</a>
   <a href="#">Clients</a>
   <a href="#">Contact</a>
-  
-  <a><button type="submit" name="submit" value="admin-panel">Admin Panel</button></a>
-  
+  <?php if($_SESSION['role'] == 1){?>
+  <a><button class="button3" type="submit" name="submit" value="admin-panel">Orders Panel</button></a>
+  <?php 
+  }?>
 </div>
 </form>
 <script src="../Public/js/menu.js"></script>

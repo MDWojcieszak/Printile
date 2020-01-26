@@ -51,13 +51,17 @@ class Routing {
                 'controller'=>'BoardController',
                 'action' => 'order'
             ],
+            'ordersPanel'=> [
+                'controller'=>'BoardController',
+                'action' => 'ordersPanel'
+            ],
             'order-premium'=> [
                 'controller'=>'BoardController',
-                'action' => 'order_premium'
+                'action' => 'orderPremium'
             ],
             'admin-panel' => [
                 'controller'=>'AdminController',
-                'action'=>'admin_panel'
+                'action'=>'adminPanel'
             ]
         ];
     }

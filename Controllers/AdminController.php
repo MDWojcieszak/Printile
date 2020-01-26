@@ -5,7 +5,7 @@ require_once __DIR__.'//..//Repository//OrdersRepository.php';
 
 class AdminController extends AppController{
 
-    public function admin_panel()
+    public function adminPanel()
     {
 
         $ordersRepository = new OrdersRepository();

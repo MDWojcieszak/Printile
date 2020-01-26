@@ -69,6 +69,10 @@
     background: #D6D6D6;
     margin-right: 4em;
 }
+.uppHeader>button.style3{
+    border-style: none solid none solid;
+    background: #D6D6D6;
+}
 .underHeader {
     
     width: 100%;

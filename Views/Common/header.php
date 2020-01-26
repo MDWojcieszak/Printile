@@ -9,6 +9,8 @@
             ?>
             <button class="style2" type="submit" name="submit" value="cart">
                 <i class="fas fa-shopping-cart"></i> Cart(<?=$_SESSION['total_quantity']?>)</button>
+                <button class="style3" type="submit" name="submit" value="orders-panel">
+                <i class="fas fa-sort-amount-down"></i> ORDERS</Button>
             <div class="dropdown_user">
                 <div  class="dropbtnUser">
                 <i class="far fa-user"></i> <?=$_SESSION['id']?></div>
@@ -51,7 +53,10 @@
                 <div class="dropdown">
                     <button class="dropbtn" type="submit" name="submit" value="error">ORDER PRINT</button>
                     <div class="dropdown-content">
+                        <?php if($_SESSION['role'] == 3){ ?>
                         <button type="submit" name="submit" value="order">ORDER STANDARD</button>
+                        <?php
+                        }?>
                         <button type="submit" name="submit" value="order-premium">ORDER PREMIUM</button>
                         <button type="submit" name="submit" value="contactForm">ORDER BY CONTACT FORM</button>
                     </div>

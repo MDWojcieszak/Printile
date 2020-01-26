@@ -73,6 +73,12 @@ class BoardController extends AppController {
             header("Location: {$url}?page=admin-panel");
             return;
         }
+        if($_POST['submit'] == 'orders-panel')
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=ordersPanel");
+            return;
+        }
         if($_POST['submit'] == 'request_order')
         {
             $userID = $_SESSION['userID'];
@@ -223,7 +229,7 @@ class BoardController extends AppController {
             $this->render('order', ['messages' =>array_values($message)]);
         }
     }
-    public function order_premium()
+    public function orderPremium()
     {
         if($this->isPost())
         {
@@ -234,5 +240,23 @@ class BoardController extends AppController {
             array_push($message,"type","You ordering a PREMIUM print!");
             $this->render('order', ['messages' =>array_values($message)]);
         }
+    }
+    public function ordersPanel()
+    {
+        if($this->isPost())
+        {
+            $this->action();
+        }
+        $ordersRepository = new OrdersRepository();
+        $data=array();
+        for($i=1;$i<20;$i++)
+        {
+            $element = $ordersRepository->getOrder($i);
+            if(isset($element) && $element->getUserID()==$_SESSION['userID'])
+            {
+                array_push($data,$element);
+            }
+        }
+        $this->render('ordersPanel',['orders' => $data]);
     }
 }
