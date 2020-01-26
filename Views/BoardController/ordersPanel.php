@@ -10,7 +10,7 @@
             <tbody>
             <tr >
                 <th style="text-align:left;"width="5%">ID</th>
-                <th style="text-align:right;" width="5%">ORDER DATE</th>
+                <th style="text-align:right;" width="10%">ORDER DATE</th>
                 <th style="text-align:right;" width="10%">STATUS</th>
                 <th style="text-align:right;" width="10%">PARAMETERS ID</th>
                 <th style="text-align:center; " width="10%">PRICE</th>
@@ -39,7 +39,7 @@
             <?php endforeach?>
             </tbody>
         </table>
-        </form>
+        
 
 
     </div>
