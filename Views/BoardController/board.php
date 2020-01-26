@@ -2,6 +2,7 @@
 <?php include(dirname(__DIR__).'/Common/head.php'); ?>
     <link rel="Stylesheet" type="text/css" href="../Public/css/board.css" />
     <script src="../Public/js/cart.js"></script>
+    
 </head>
 <body id="main">
 <?php include(dirname(__DIR__).'/Common/menu.php'); ?>
