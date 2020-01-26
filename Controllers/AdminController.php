@@ -13,7 +13,7 @@ class AdminController extends AppController{
         for($i=1;$i<20;$i++)
         {
             $element = $ordersRepository->getOrder($i);
-            if(isset($element))
+            if(isset($element) && $element->getStatus() != 'ORDERED !'&&$element->getStatus() != 'PRINTING'&&$element->getStatus() != 'SHIPPED'&&$element->getStatus() != 'FINISH')
             {
                 array_push($data,$element);
             }
@@ -52,5 +52,46 @@ class AdminController extends AppController{
         }
         
         $this->render('adminPanel', ['orders' => $data]);
+    }
+    public function adminPanelOrdered()
+    {
+        $ordersRepository = new OrdersRepository();
+        $data=array();
+        for($i=1;$i<20;$i++)
+        {
+            $element = $ordersRepository->getOrder($i);
+            if(isset($element))
+            {
+                if($element->getStatus() == 'ORDERED !' ||$element->getStatus() == 'PRINTING'||$element->getStatus() == 'SHIPPED')
+                array_push($data,$element);
+            }
+        }
+
+        if($this->isPost())
+        {
+            if($_POST['submit'] == 'update'){
+                
+                $db = new Database();
+                $orderID = $_POST['orderID'];
+                $status = $_POST['status'];
+                $con = $db->connect();
+                if($status != '0')
+                {
+                    $res = $con->prepare("UPDATE orders SET status = '$status' WHERE id = '$orderID';");
+                    $res->execute();
+                }
+                $url = "http://$_SERVER[HTTP_HOST]/";
+                header("Location: {$url}?page=admin-panel-ordered");
+                return;
+            }
+            if($_POST['submit'] == 'back')
+            {
+                $url = "http://$_SERVER[HTTP_HOST]/";
+                header("Location: {$url}?page=board");
+                return;
+            }
+        }
+        
+        $this->render('adminPanelOrdered', ['orders' => $data]);
     }
 }

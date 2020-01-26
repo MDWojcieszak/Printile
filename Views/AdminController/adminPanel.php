@@ -42,7 +42,7 @@
                     </td>
                     <td  style="text-align:right;"><?= $order->getParametersID()?></td>
                     <td  style="text-align:right;"><?= $order->getPrice()?></td>
-                    <td  style="text-align:right;"><input type="text" name="price"></td>
+                    <td  style="text-align:right; "><input type="text" name="price" style="border: solid black;"></td>
                     <input type="hidden" name="orderID" value=<?=$order->getID()?>>
                     <td><button type="submit" name="submit" value="update"><i class="fas fa-edit"></i></button></td>
                     

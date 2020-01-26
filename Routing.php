@@ -62,6 +62,10 @@ class Routing {
             'admin-panel' => [
                 'controller'=>'AdminController',
                 'action'=>'adminPanel'
+            ],
+            'admin-panel-ordered' => [
+                'controller'=>'AdminController',
+                'action'=>'adminPanelOrdered'
             ]
         ];
     }

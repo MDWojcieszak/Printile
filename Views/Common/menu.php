@@ -9,7 +9,8 @@
   <a href="#">Clients</a>
   <a href="#">Contact</a>
   <?php if($_SESSION['role'] == 1){?>
-  <a><button class="button3" type="submit" name="submit" value="admin-panel">Orders Panel</button></a>
+  <a><button class="button3" type="submit" name="submit" value="admin-panel">Accepting Orders</button></a>
+  <a><button class="button3" type="submit" name="submit" value="admin-panel-ordered">Printing Orders</button></a>
   <?php 
   }?>
 </div>

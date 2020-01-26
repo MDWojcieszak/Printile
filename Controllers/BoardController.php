@@ -79,6 +79,12 @@ class BoardController extends AppController {
             header("Location: {$url}?page=ordersPanel");
             return;
         }
+        if($_POST['submit'] == 'admin-panel-ordered')
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=admin-panel-ordered");
+            return;
+        }
         if($_POST['submit'] == 'request_order')
         {
             $userID = $_SESSION['userID'];
@@ -243,12 +249,20 @@ class BoardController extends AppController {
     }
     public function ordersPanel()
     {
-        if($this->isPost())
-        {
-            $this->action();
-        }
         $ordersRepository = new OrdersRepository();
         $data=array();
+        if($this->isPost())
+        {
+            if($_POST['submit'] == 'pay')
+            {
+                $db = new Database();
+                $orderID = $_POST['orderID'];
+                $con = $db->connect();
+                    $res = $con->prepare("UPDATE orders SET status = 'ORDERED !' WHERE id = '$orderID';");
+                    $res->execute();
+            }
+            $this->action();
+        }
         for($i=1;$i<20;$i++)
         {
             $element = $ordersRepository->getOrder($i);
