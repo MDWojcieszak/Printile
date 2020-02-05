@@ -91,6 +91,13 @@ class BoardController extends AppController {
             header("Location: {$url}?page=admin-panel-users");
             return;
         }
+        if($_POST['submit'] == 'printServer')
+        {
+            $url = "http://www.whcp.pl:81";
+            header("Location: {$url}");
+            return;
+        }
+        
         if($_POST['submit'] == 'request_order')
         {
             $userID = $_SESSION['userID'];

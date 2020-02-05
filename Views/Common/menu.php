@@ -9,6 +9,7 @@
   <a><button class="button3" type="submit" name="submit" value="admin-panel-ordered">Printing Orders</button></a>
   <a><button class="button3" type="submit" name="submit" value="admin-panel-users">Users</button></a>
   <a><button class="button3" type="submit" name="submit" value="dataBase">Data Base</button></a>
+  <a><button class="button3" type="submit" name="submit" value="printServer">Print Server</button></a>
   <?php 
   }
   else{?>
